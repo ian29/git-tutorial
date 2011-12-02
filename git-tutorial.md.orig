@@ -124,20 +124,19 @@ This will create a new directory called <code>layers.orig</code>, containing the
 
 Git allows you create new branches that will still track your changes but not push them to the master branch. This allows you to experiment without jeopardizing the main (and hopefully stable) branch of the project. For example, if you are making serious alterations to an already functional data layer in a project that was already being used to render polished maps and didn't want to corrupt the original data files, branching your project would allow you to play with the data without worrying about whether your pushes would affect the files being used in the master branch. 
 
-To create a branch, run <code>git branch _you-branch-name_</code>. To simultaneously create and switch to a branch <code>git branch -b _you-branch-name_</code> (without invoking the -b option, you will create the new branch, but still be working in the original branch). To switch between branches run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <code>git push origin _your-branch-name_</code>. Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. 
+<<<<<<< HEAD
+To create a branch, run <code>git branch _you-branch-name_</code>. To switch to that branch run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <code>git push origin _your-branch-name_</code>. Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. 
 
 ### Conflicts 
 
-If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. You should see an error like this: 
+If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. Just run <code>git mergetool</code> or <code>git mergetool -t _your-merge-tool_</code>, if you have not set up a default merge tool.
+=======
+To create a branch, run <code>git branch _you-branch-name_</code>. To simlutaneously create and switch to a branch <code>git branch -b _you-branch-name_</code> (without invoking the -b option, you will create the new branch, but still be working in the original branch). To switch between branches run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <code>git push origin _your-branch-name_</code>. Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. 
 
-![merge conflict]https://img.skitch.com/20111202-gjq6s4ty2du3cs7c93ejeuafg7.png)
+### Conflicts 
 
-to resolve, run <code>git mergetool</code> or  if you have not set up a default merge tool
-<code>git mergetool -t _your-merge-tool_</code>. You should now see this prompt
-
-![git mergetool prompt](https://img.skitch.com/20111202-1jisqcy57b1gaha4suf3gbhuwb.png)
-
-enter yes, pick which changes you want from each file (in diffmerge your the version in your local working copy will be on the left and the conflicting version will be on the right), and save your changes. Once complete, push your changes and run <code>git merge</code> again. No error should appear.   
+If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. Just run <code>git mergetool</code> or <code>git mergetool -t _your-merge-tool_</code>, if you have not set up a default merge tool. 
+>>>>>>> test
 
 ### .gitignore
 

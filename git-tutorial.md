@@ -136,6 +136,7 @@ The .gitignore file that lives in your home directory is a useful way of ensurin
 
 ### Git Tags
 
-If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-tag-message_</code>. Tags are useful in that they allow you to reference important moments in your project's development. Using `git diff _your-tag-mesasge_` will display all changes to your current working tree since you made that tag. 
+If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-tag-message_</code>. Tags are useful in that they allow you to reference important moments in your project's development. Using `git diff _your-tag-mesasge_` will display all changes to your current working tree since you made that tag:
 
+![](https://img.skitch.com/20111202-di9jm4d68cw2gbqqc5fjkguj5p.png)
  

@@ -1,6 +1,10 @@
 # Set Up
 
+If you haven't already, be sure to [get set up with Git](http://help.github.com/set-up-git-redirect). 
+
 Although all of these are optional, these steps will improve your workflow and make learning git much more manageable. 
+
+Also checkout http://gitref.org/ for more examples and explanations. 
 
 ### Colors
 
@@ -134,11 +138,11 @@ If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMe
 ![merge conflict](https://img.skitch.com/20111202-gjq6s4ty2du3cs7c93ejeuafg7.png)
 
 to resolve, run <code>git mergetool</code> or  if you have not set up a default merge tool
-<code>git mergetool -t _your-merge-tool_</code>. You should now see this prompt
+<code>git mergetool -t _your-merge-tool_</code>. You should now see this prompt:
 
 ![git mergetool prompt](https://img.skitch.com/20111202-1jisqcy57b1gaha4suf3gbhuwb.png)
 
-enter yes, pick which changes you want from each file (in diffmerge your the version in your local working copy will be on the left and the conflicting version will be on the right), and save your changes. Once complete, push your changes and run <code>git merge</code> again. No error should appear. You will notice however that in your present working directory you will have a new file for every file in which you resolved a merge conflict. The file as it existed before the merge will now be labeled <code>_your-file.orig_</code> and the new file (inclusive of the merge resolution) will maintain the same naming convention.   
+Enter yes, pick which changes you want from each file (in diffmerge, the version in your local working copy will be on the left and the conflicting version will be on the right), and save your changes. Once complete, push your changes and run <code>git merge</code> again. No error should appear. You will notice however that in your present working directory you will have a new file for every file in which you resolved a merge conflict. The file as it existed before the merge will now be labeled <code>_your-file.orig_</code> and the new file (inclusive of the merge resolution) will maintain the same naming convention.   
 
 ### .gitignore
 
@@ -146,7 +150,7 @@ The .gitignore file that lives in your home directory is a useful way of ensurin
 
 ### Git Tags
 
-If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-tag-message_</code>. Tags are useful in that they allow you to reference important moments in your project's development. Using `git diff _your-tag-mesasge_` will display all changes to your current working tree since you made that tag:
+If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-tag-message_</code>. Tags are useful in that they allow you to reference important moments in your project's development. Using <code>git diff _your-tag-mesasge_</code> will display all changes to your current working tree since you made that tag:
 
 ![](https://img.skitch.com/20111202-di9jm4d68cw2gbqqc5fjkguj5p.png)
  

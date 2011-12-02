@@ -70,9 +70,10 @@ To set this as your default, run
 
 and past in the following code:
 
->[mergetool "diffmerge"]
->        cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
->        trustExitCode = false
+><pre>[mergetool "diffmerge"]
+     cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+     trustExitCode = false
+</pre>
 
 then run:
 

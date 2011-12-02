@@ -116,9 +116,11 @@ This will create a new directory called <code>layers.orig</code>, containing the
 
 Git allows you create new branches that will still track your changes but not push them to the master branch. This allows you to experiment without jeapordizing the main (and hopefully stable) branch of the project. For example, if you are making serious alterations to an already functional data layer in a project that was already being used to render polished maps and didn't want to corrupt the original data files, branching your project would allow you to play with the data without worrying about whether your pushes would affect the files being used in the master branch. 
 
-To create a branch, run <code>git branch _you-branch-name_</code>. To switch to that branch run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <git push origin _your-branch-name_>. 
+To create a branch, run <code>git branch _you-branch-name_</code>. To switch to that branch run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <code>git push origin _your-branch-name_</code>. Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. 
 
-Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. 
+### Conflicts 
+
+If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. Just run <code>git mergetool</code> 
 
 ### .gitignore
 

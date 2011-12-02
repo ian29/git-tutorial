@@ -4,7 +4,7 @@ Although all of these are optional, these steps will improve your workflow and m
 
 ### Colors
 
-Colors can let you know whether you're in a git working copy, and which branch your working on. Simply paste the following code into you're ~/.bash_profile
+Colors can let you know whether you're in a git working copy, and which branch your working on. Simply paste the following code into ~/.bash_profile using a text editor like nano. 
 
 ><pre>
 >
@@ -45,12 +45,7 @@ Colors can also show which lines have been added, deleted, ignored, and more by 
 	untracked = cyan
 </pre>
 
-### Merge Tools
-
-In the event git can't resolve merge conflicts, it's a good idea to have a default merge too like [DiffMerge](http://www.sourcegear.com/diffmerge/downloads.php) on hand. For Mac OS X, be sure to download the installer, and __not__ the DMG.
-![diffmerege](https://img.skitch.com/20111201-85muwrcxdp7cte8cc6s476f4ak.png)
-
-### Default Editor
+### Default Text Editor
 
 Setting up a default text editor is helpful, especially when making commit comments that can't be capture with the -m option. To do so, simply copy the following code into ~/.bash_profile. 
 
@@ -58,11 +53,24 @@ Setting up a default text editor is helpful, especially when making commit comme
 
 In this example, I'm setting my default text editor to nano, but most text editors will work. 
 
+### Merge Tools
+
+In the event git can't resolve merge conflicts, it's a good idea to have a default merge tool like [DiffMerge](http://www.sourcegear.com/diffmerge/downloads.php) on hand. For Mac OS X, be sure to download the installer, and __not__ the DMG.
+
+![diffmerege](https://img.skitch.com/20111201-85muwrcxdp7cte8cc6s476f4ak.png)
+
+To set this as your default, run 
+
+<pre>
+git config --global merge.tool diffmerge
+</pre>
+
 # Tracking a TileMill project with git
 
 ### Creating a repo
 
 To create a (new, public) repository, go to you're github dashboard (simply github.com, once you're logged in to your account) and click on the "New Repository" button
+
 ![](https://skitch.com/sbysp/gc74q/your-dashboard-github)
 
 Next, you'll need to run <code>git init</code> in Terminal in the directory you want to be add to your repo. In this case, this will be the relevant TileMill project folder in <code>/Users/[you]/Documents/project</code> This __init__ializes your git repo, creating a .git file in your current directory where all of your changes will be tracked. 
@@ -71,7 +79,7 @@ Now run <code>git add your-files.ext</code> for any files or directories you wan
 
 ![git status](https://img.skitch.com/20111201-cpbmy5qhmeaxj2ekn3asns9p86.png)
 
-You're ready for your first commit. Running <code>git commit</code>, should open your default text editor as a way of prompting you for a comment to describe the commmit you are making. By convention, the first line of your first commit is appropriately "First Commit" followed by a description of the changes you are making  (in this case you are adding files to your repo). After you've outlined your changes, save and close the editor, and your commit will be complete. 
+You're ready for your first commit. Running <code>git commit</code>, should open your default text editor as a way of prompting you for a comment to describe the commit you are making. By convention, the first line of your first commit is appropriately "First Commit" followed by a description of the changes you are making  (in this case you are adding files to your repo). After you've outlined your changes, save and close the editor, and your commit will be complete. 
 
 For subsequent commits, you can use the <code>-m</code> flag to make shorter comments:
 
@@ -108,17 +116,19 @@ Unless your data is saved directly to the <code>project/layers/</code> directory
 
 ><pre>rsync -aLv layers.orig/ layers/</pre>
 
-This will create a new directory called <code>layers.orig</code>, containing the original smlinks, and a new folder called <code>layers/</code> containing copies of the original files. you can now add the entire project to your git repo, allowing collaborators access to your data layers. 
+This will create a new directory called <code>layers.orig</code>, containing the original smlinks, and a new folder called <code>layers/</code> containing copies of the original files. You can now add the entire project to your git repo, allowing collaborators access to your data layers. 
 
 ## Other git tools
 
 ### Branches
 
-Git allows you create new branches that will still track your changes but not push them to the master branch. This allows you to experiment without jeapordizing the main (and hopefully stable) branch of the project. For example, if you are making serious alterations to an already functional data layer in a project that was already being used to render polished maps and didn't want to corrupt the original data files, branching your project would allow you to play with the data without worrying about whether your pushes would affect the files being used in the master branch. 
+Git allows you create new branches that will still track your changes but not push them to the master branch. This allows you to experiment without jeopardizing the main (and hopefully stable) branch of the project. For example, if you are making serious alterations to an already functional data layer in a project that was already being used to render polished maps and didn't want to corrupt the original data files, branching your project would allow you to play with the data without worrying about whether your pushes would affect the files being used in the master branch. 
 
-To create a branch, run <code>git branch _you-branch-name_</code>. To switch to that branch run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <git push origin _your-branch-name_>. 
+To create a branch, run <code>git branch _you-branch-name_</code>. To simlutaneously create and switch to a branch <code>git branch -b _you-branch-name_</code> (without invoking the -b option, you will create the new branch, but still be working in the original branch). To switch between branches run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <code>git push origin _your-branch-name_</code>. Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. 
 
-Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code>git merge _your-branch-name_</code>. If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. 
+### Conflicts 
+
+If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. Just run <code>git mergetool</code> or <code>git mergetool -t _your-merge-tool_</code>, if you have not set up a default merge tool. 
 
 ### .gitignore
 
@@ -126,6 +136,7 @@ The .gitignore file that lives in your home directory is a useful way of ensurin
 
 ### Git Tags
 
-If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-message_</code>. 
+If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-tag-message_</code>. Tags are useful in that they allow you to reference important moments in your project's development. Using `git diff _your-tag-mesasge_` will display all changes to your current working tree since you made that tag:
 
+![](https://img.skitch.com/20111202-di9jm4d68cw2gbqqc5fjkguj5p.png)
  

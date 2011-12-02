@@ -66,9 +66,21 @@ In the event git can't resolve merge conflicts, it's a good idea to have a defau
 
 To set this as your default, run 
 
+> nano ~/.gitconfig
+
+and past in the following code:
+
+>[mergetool "diffmerge"]
+>        cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+>        trustExitCode = false
+
+then run:
+
 <pre>
 git config --global merge.tool diffmerge
 </pre>
+
+and you should be good to go!
 
 # Tracking a TileMill project with git
 

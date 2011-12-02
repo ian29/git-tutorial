@@ -93,9 +93,11 @@ Now run <code>git add your-files.ext</code> for any files or directories you wan
 
 ![git status](https://img.skitch.com/20111201-cpbmy5qhmeaxj2ekn3asns9p86.png)
 
-You're ready for your first commit. Running <code>git commit</code>, should open your default text editor as a way of prompting you for a comment to describe the commit you are making. By convention, the first line of your first commit is appropriately "First Commit" followed by a description of the changes you are making  (in this case you are adding files to your repo). After you've outlined your changes, save and close the editor, and your commit will be complete. 
+You're ready for your first commit. Running <code>git commit</code>, should open your default text editor as a way of prompting you for a comment to describe the commit you are making. Your commit message should be an accurate description of the changes the commit is applying. For the initial setup something like "First Commit" is appropriate, possibly followed by more details (in this case you are adding files to your repo). Most git interfaces will treat the first line of a commit message as the title or short version of the full message.
 
-For subsequent commits, you can use the <code>-m</code> flag to make shorter comments:
+After you've outlined your changes, save and close the editor, and your commit will be complete. 
+
+You can use the <code>-m</code> flag to make shorter comments:
 
 ><pre>git commit -m "a shorter comment"</pre>
 

@@ -117,14 +117,22 @@ This will create a new directory called <code>layers.orig</code>, containing the
 
 The .gitignore file that lives in your home directory is a useful way of ensuring that git will not track certain file types. If you were editing a large GeoTiff creating changes that would result in unnecessarily large pulls for your collaborators, you could simple edit .gitignore by running <code>nano ~/.gitignore</code> and adding .tif to the file contents. This would ensure that all files with the .tif extension would not be tracked by git. 
 
+<<<<<<< HEAD
 #### Git Tags
 
 
 
 #### Branches
 
-Git allows you to "fork" a repository, creating a new branch that will still track your changes but not push them to the master branch. For example, if you are making serious alterations to an already functional data layer in a project that was already being used to render polished maps and didn't want to corrupt the original data files, branching your project would allow you to play with the data without worrying about whether your pushes would affect the files being used in the master branch. 
+Git allows you to "fork" a repository, creating a new branch that will still track your changes but not push them to the master branch. This allows you to experiment without jepordizing the main (and hopefully stable) branch of the project. For example, if you are making serious alterations to an already functional data layer in a project that was already being used to render polished maps and didn't want to corrupt the original data files, branching your project would allow you to play with the data without worrying about whether your pushes would affect the files being used in the master branch. 
 
 To create a branch, run <code>git branch _you-branch-name_</code>. To switch to that branch run <code>git checkout _your-branch-name_</code>. Remember that any pushes you make will now require you to run <git push origin _your-branch-name_>. 
 
 Once your now-isolated changes are complete, you will probably want to merge your branch back to the master. To do so run <code> 
+=======
+#### git tags
+
+#### branches
+
+Git allows you to "fork" a repository, creating a new branch that will still track your changes but not  
+>>>>>>> test

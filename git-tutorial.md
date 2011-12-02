@@ -8,7 +8,7 @@ Also checkout http://gitref.org/ for more examples and explanations.
 
 ### Colors
 
-Colors can let you know whether you're in a git working copy, and which branch your working on. Simply paste the following code into ~/.bash_profile using a text editor like nano. 
+Colors can let you know whether you're in a git working copy, and which branch your working on. Simply paste the following code into `~/.bash_profile` using a text editor like nano. 
 
 ><pre>
 >
@@ -52,7 +52,7 @@ Colors can also show which lines have been added, deleted, ignored, and more by 
 
 ### Default Text Editor
 
-Setting up a default text editor is helpful, especially when making commit comments that can't be capture with the -m option. To do so, simply copy the following code into ~/.bash_profile. 
+Setting up a default text editor is helpful, especially when making commit comments that can't be capture with the -m option. To do so, simply copy the following code into `~/.bash_profile`. 
 
 ><pre>export EDITOR=nano</pre>
 
@@ -66,13 +66,12 @@ In the event git can't resolve merge conflicts, it's a good idea to have a defau
 
 To set this as your default, run 
 
-> nano ~/.gitconfig
+>     nano ~/.gitconfig
 
 and paste in the following code:
 
 ><pre>[merge]
     tool = diffmerge
-
 [mergetool "diffmerge"]
     cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
     trustExitCode = false

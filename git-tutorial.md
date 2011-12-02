@@ -137,7 +137,7 @@ to resolve, run <code>git mergetool</code> or  if you have not set up a default 
 
 ![git mergetool prompt](https://img.skitch.com/20111202-1jisqcy57b1gaha4suf3gbhuwb.png)
 
-enter yes, pick which changes you want from each file (in diffmerge your the version in your local working copy will be on the left and the conflicting version will be on the right), and save your changes. Once complete, push your changes and run <code>git merge</code> again. No error should appear.   
+enter yes, pick which changes you want from each file (in diffmerge your the version in your local working copy will be on the left and the conflicting version will be on the right), and save your changes. Once complete, push your changes and run <code>git merge</code> again. No error should appear. You will notice however that in your present working directory you will have a new file for every file in which you resolved a merge conflict. The file as it existed before the merge will now be labeled <code>_your-file.orig_</code> and the new file (inclusive of the merge resolution) will maintain the same naming convention.   
 
 ### .gitignore
 

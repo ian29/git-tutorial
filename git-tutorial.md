@@ -68,17 +68,14 @@ To set this as your default, run
 
 > nano ~/.gitconfig
 
-and past in the following code:
+and paste in the following code:
 
-><pre>[mergetool "diffmerge"]
-     cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
-     trustExitCode = false
-</pre>
+><pre>[merge]
+    tool = diffmerge
 
-then run:
-
-<pre>
-git config --global merge.tool diffmerge
+[mergetool "diffmerge"]
+    cmd = diffmerge --merge --result=$MERGED $LOCAL $BASE $REMOTE
+    trustExitCode = false
 </pre>
 
 and you should be good to go!
@@ -89,7 +86,7 @@ and you should be good to go!
 
 To create a (new, public) repository, go to you're github dashboard (simply github.com, once you're logged in to your account) and click on the "New Repository" button
 
-![](https://skitch.com/sbysp/gc74q/your-dashboard-github)
+![](https://img.skitch.com/20111201-jnxkwexbr1dcuqhh9rp68gndn8.png)
 
 Next, you'll need to run <code>git init</code> in Terminal in the directory you want to be add to your repo. In this case, this will be the relevant TileMill project folder in <code>/Users/[you]/Documents/project</code> This __init__ializes your git repo, creating a .git file in your current directory where all of your changes will be tracked. 
 

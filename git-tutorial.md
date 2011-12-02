@@ -21,6 +21,7 @@ Colors can let you know whether you're in a git working copy, and which branch y
 ></pre>
 
 and whenever you're in a git working copy, your command prompt should look like this: 
+
 ![](https://img.skitch.com/20111201-gghbf2a8sp4pcwspht394dup26.png)
 
 Colors can also show which lines have been added, deleted, ignored, and more by adding this code to ~/.gitconfig :
@@ -130,7 +131,7 @@ To create a branch, run <code>git branch _you-branch-name_</code>. To simultaneo
 
 If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. You should see an error like this: 
 
-![merge conflict]https://img.skitch.com/20111202-gjq6s4ty2du3cs7c93ejeuafg7.png)
+![merge conflict](https://img.skitch.com/20111202-gjq6s4ty2du3cs7c93ejeuafg7.png)
 
 to resolve, run <code>git mergetool</code> or  if you have not set up a default merge tool
 <code>git mergetool -t _your-merge-tool_</code>. You should now see this prompt

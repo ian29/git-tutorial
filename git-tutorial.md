@@ -159,6 +159,8 @@ Enter yes, pick which changes you want from each file (in diffmerge, the version
 
 The .gitignore file that lives in your home directory is a useful way of ensuring that git will not track certain file types. If you were editing a large GeoTiff creating changes that would result in unnecessarily large pulls for your collaborators, you could simple edit .gitignore by running <code>nano ~/.gitignore</code> and adding .tif to the file contents. This would ensure that all files with the .tif extension would not be tracked by git. 
 
+You can also add a .gitignore file to any part of a particular git repository, where it will only apply to the folder it is in (plus all of that folder's subfolders).
+
 ### Git Tags
 
 If you want or need to remember important commits, you can use <code>git tag</code>. As you will probably want to include a message relating the significance of your tag, run <code>git tag -a _your-tag-message_</code>. Tags are useful in that they allow you to reference important moments in your project's development. Using <code>git diff _your-tag-mesasge_</code> will display all changes to your current working tree since you made that tag:

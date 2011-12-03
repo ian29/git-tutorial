@@ -144,7 +144,7 @@ To create a branch, run <code>git branch _you-branch-name_</code>. To simultaneo
 
 ### Conflicts 
 
-If git can't resolve and conflicts, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. You should see an error like this: 
+Git can handle multiple people working on the same project pretty well, but sometimes you and someone else will make edits to the same part of a file at the same time and git won't know what to do. If git can't resolve such a conflict, it's a perfect opportunity to try out DiffMerge or whatever mergetool you're using. You will see an error like this: 
 
 ![merge conflict](https://img.skitch.com/20111202-gjq6s4ty2du3cs7c93ejeuafg7.png)
 
